@@ -1,0 +1,45 @@
+{{- /*
+  Usage: `example args`
+
+  `args` are all optional and can be one of the following:
+    * id: the `div`'s id - default: ""
+    * class: any extra class(es) to be added to the `div` - default: ""
+    * lang: The shown programming language - default: "html"
+    * show_preview: if the preview should be output in the HTML - default: `true`
+    * show_markup: if the markup should be output in the HTML - default: `true`
+*/ -}}
+
+{{- $id := .Get "id" -}}
+{{- $class := .Get "class" -}}
+{{- $lang := .Get "lang" | default "html" -}}
+{{- $copy := .Get "copy" | default true -}}
+{{- $show_preview := .Get "show_preview" | default true -}}
+{{- $show_markup := .Get "show_markup" | default true -}}
+{{- $input := .Inner -}}
+{{- $copy_text := replace .Inner "\"" "'" -}}
+
+<div class="bd-example-snippet bd-code-snippet">
+
+  {{- if eq $show_preview true -}}
+  <div class="bd-example{{ with $class }} {{ . }}{{ end }}">
+    {{- $input -}}
+  </div>
+  {{- end -}}
+
+  <div class="accordion">
+    <details class="accordion__item">
+      <summary class="accordion__trigger">
+        <div class="accordion__label">{{- $lang -}}</div>
+        <div class="accordion__icon"><span class="icon icon--arrow-down"></span></div>
+      </summary>
+      <div class="accordion__content">
+        {{- if eq $show_markup true -}}
+          {{- $content := replaceRE `<svg class="bd-placeholder-img(?:-lg)?(?: *?bd-placeholder-img-lg)? ?(.*?)".*?<\/svg>\n` `<img src="..." class="$1" alt="...">` $input -}}
+          {{- $content = replaceRE ` (class=" *?")` "" $content -}}
+          {{- highlight (trim $content "\n") $lang "" -}}
+        {{- end -}}
+      </div>
+    </details>
+  </div>
+</div>
+

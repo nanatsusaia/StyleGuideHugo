@@ -1,0 +1,47 @@
+{{ $currentPage := . }}
+{{ $permalink := cond (eq (len .RelPermalink) 1) .RelPermalink (strings.TrimRight "/" .RelPermalink) }}
+
+<aside class="side-panel-mobile padding-top-1.00 padding-top-0.00-md padding-horizontal-0.00-md" data-sg-side-panel="aside-menu">
+  <nav class="menu menu--vertical menu--show-initial-current-page padding-horizontal-0.00-md">
+    <ul class="menu__list">
+      {{- range .Site.Menus.main }}
+      {{- if .Name }}
+        <li class="menu__item {{ if $currentPage.IsMenuCurrent "main" . }}menu__item--current-page menu__item--active{{ end }}">
+          <a href="{{ .URL }}" class="menu__text">{{ .Name }}</a>
+          <span class="menu__icon"><span class="icon icon--arrow-down"></span></span>
+          {{- if .HasChildren }}
+          <ul class="menu__list {{ if $currentPage.HasMenuCurrent "main" . }}menu__list--active{{ end }}">
+            {{ range .Children }}
+              <li class="menu__item {{ if $currentPage.IsMenuCurrent "main" . }}menu__item--current-page menu__item--active{{ end }}">
+                <a href="{{ .URL }}" class="menu__text">{{ .Name }}</a>
+                <span class="menu__icon"><span class="icon icon--plus"></span><span class="icon icon--minus"></span><span class="icon icon--arrow-right"></span></span>
+                {{- if .HasChildren }}
+                <ul class="menu__list {{ if $currentPage.HasMenuCurrent "main" . }}menu__list--active{{ end }}">
+                  {{ range .Children }}
+                    <li class="menu__item {{ if $currentPage.IsMenuCurrent "main" . }}menu__item--current-page menu__item--active{{ end }}">
+                      <a href="{{ .URL }}" class="menu__text">{{ .Name }}</a>
+                      <span class="menu__icon"><span class="icon icon--plus"></span><span class="icon icon--minus"></span><span class="icon icon--arrow-right"></span></span>
+                      {{- if .HasChildren }}
+                      <ul class="menu__list {{ if $currentPage.HasMenuCurrent "main" . }}menu__list--active{{ end }}">
+                        {{ range .Children }}
+                          <li class="menu__item {{ if $currentPage.IsMenuCurrent "main" . }}menu__item--current-page{{ end }}">
+                            <a href="{{ .URL }}" class="menu__text">{{ .Name }}</a>
+                            <span class="menu__icon"><span class="icon icon--plus"></span><span class="icon icon--minus"></span><span class="icon icon--arrow-right"></span></span>
+                          </li>
+                        {{- end }}
+                      </ul>
+                      {{- end }}
+                    </li>
+                  {{- end }}
+                </ul>
+                {{- end }}
+              </li>
+            {{- end }}
+          </ul>
+          {{- end }}
+        </li>
+      {{- end }}
+      {{- end }}
+    </ul>
+  </nav>
+</aside>

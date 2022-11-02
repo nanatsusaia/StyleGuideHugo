@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <article>
+    <div>
+      {{ .Content }}
+    </div>
+  </article>
+
+  <div class="grid grid--gap-100">
+    {{ range .Pages }}
+      <article class="grid__item-6 grid__item-12--sm padding-horizontal-1.00 padding-bottom-1.00 border-thin border-color-gray-400 border-radius-rounded">
+        <header>
+          <h2>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+        </header>
+
+        <p>{{ .Description }}</p>
+      </article>
+    {{ end }}
+  </div>
+{{ end }}

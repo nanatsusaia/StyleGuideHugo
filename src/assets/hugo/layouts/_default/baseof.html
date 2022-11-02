@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html id="style-guide-docu" lang="en">
+<head>
+  {{- partial "head" . -}}
+</head>
+<body class="page-layout page-layout--stretch">
+  {{ partial "page-header" . }}
+
+  <main class="page-content">  
+    <section class="page-content__container page-content__container--2-cols">
+      <article class="page-content__item">
+        {{- block "main" .}}{{- end}}
+      </article>
+  
+      <aside class="page-content__side menu-sticky-top">
+        <article class="page-content__item">
+          {{- partial "aside-menu" . -}}
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  {{ partial "page-footer" . }}
+</body>
+</html>

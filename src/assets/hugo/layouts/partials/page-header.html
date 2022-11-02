@@ -1,0 +1,26 @@
+<header class="page-header page-header--stretch">
+  <div class="page-header__navi-action display-none display-block-md" data-sg-side-panel-toggle="aside-menu" data-sg-page-header-navigation="aside-menu">
+    <span data-sg-page-header-menu-icon="open" class="icon icon--menu"></span>
+    <span data-sg-page-header-menu-icon="close" class="icon icon--close"></span>
+  </div>
+  <div class="page-header__logo">
+    <a href="/" class="logo logo-finnet-style-guide"></a>
+  </div>
+  <div class="page-header__search">
+    {{ partial "search-desktop" . }}
+  </div>
+  <div class="page-header__actions">
+    {{ partial "theme-selector" . }}
+    <button
+      class="button button--pill button--icon border-color-white display-none display-block-md"
+      data-sg-side-panel-toggle="search-mobile"
+      title="Search">
+			<span class="icon icon--search"></span>
+		</button>
+    <a href="https://dev.azure.com/finanzennet/finando/_git/common-styles" title="Azure DevOps Repo">
+      <img class="img img--ratio-1-1 height-1-em width-auto font-size-1.500-rem" src="/image/azure-devops.ico">
+    </a>
+    <span class="icon icon--eye font-color-white font-size-1.500-rem pointer" data-docu-dark-mode-toggler></span>
+  </div>
+</header>
+{{ partial "search-mobile" . }}

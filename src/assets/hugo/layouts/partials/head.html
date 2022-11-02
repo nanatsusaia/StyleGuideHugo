@@ -1,0 +1,15 @@
+{{ $sgPath := cond (eq .Site.IsServer true) "/style-guide/" "style-guide/" }}
+
+<meta charset="utf-8" />
+<meta name="description" content="finanzen.net GmbH Style Guide API Template" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="date" content="{{ .Date }}">
+
+<title>{{ .Title }}</title>
+
+<!-- style -->
+<link rel="stylesheet" href="{{ $sgPath }}style-docu.css" />
+
+<!-- script -->
+<script src="{{ $sgPath }}script-default.js" defer></script>
+<script src="{{ $sgPath }}script-docu.js" defer></script>

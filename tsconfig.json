@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["ES2015", "DOM", "ES2018", "ES2022"],
+    "module": "es2020",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "./dist/",
+    "resolveJsonModule": true,
+    "target": "es5",
+    "types": [
+      "reflect-metadata",
+      "node",
+      "jest",
+      "node_modules/@types"
+    ]
+  }
+}

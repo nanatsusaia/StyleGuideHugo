@@ -1,0 +1,19 @@
+{{- $link := .Get "link" -}}
+{{- $name := .Get "name" -}}
+{{- $lang := .Get "lang" | default "html" -}}
+{{- $theme := .Get "theme" | default "" -}}
+
+<div class="example-code">
+  <iframe src="{{- $link -}}?theme={{- $theme -}}" name="{{- $name -}}" class="example-code__frame" width="100%"></iframe>
+  <details class="accordion__item example-code__accordion">
+    <summary class="accordion__trigger">
+      <div class="accordion__label">{{- $lang -}}</div>
+      <div class="accordion__icon"><span class="icon icon--arrow-down"></span></div>
+    </summary>
+    <div class="accordion__content">
+      <pre class="example-code__pre">
+        <code class="example-code__code" data-example-code-link="{{- $link -}}"></code>
+      </pre>
+    </div>
+  </details>
+</div>

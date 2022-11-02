@@ -1,0 +1,76 @@
+[[main]]
+  identifier = 'home'
+  name = 'Style Guide API'
+  url = '/'
+  pageRef = '/'
+  weight = 1
+
+[[main]]
+  identifier = 'getting-started'
+  name = 'Getting Started'
+  url = '/getting-started'
+  pageRef = 'getting-started'
+  weight = 2
+
+[[main]]
+  identifier = 'assets'
+  name = 'Assets'
+  url = '/assets'
+  pageRef = 'assets'
+  weight = 3
+
+[[main]]
+  identifier = 'base'
+  name = 'Base'
+  url = '/base'
+  pageRef = 'base'
+  weight = 4
+
+[[main]]
+  identifier = 'typography'
+  name = 'Typography'
+  url = '/typography'
+  pageRef = 'typography'
+  weight = 5
+
+[[main]]
+  identifier = 'components'
+  name = 'Components'
+  url = '/components'
+  pageRef = 'components'
+  weight = 6
+
+[[main]]
+  identifier = 'layouts'
+  name = 'Layouts'
+  url = '/layouts'
+  pageRef = 'layouts'
+  weight = 7
+
+[[main]]
+  identifier = 'global-modifier'
+  name = 'Global Modifier'
+  url = '/global-modifier'
+  pageRef = 'global-modifier'
+  weight = 9
+
+[[main]]
+  identifier = 'themes'
+  name = 'Themes'
+  url = '/themes'
+  pageRef = 'themes'
+  weight = 10
+
+[[main]]
+  identifier = 'vendors'
+  name = 'Vendors'
+  url = '/vendors'
+  pageRef = 'vendors'
+  weight = 11
+
+[[main]]
+  identifier = 'scripting'
+  name = 'Scripting'
+  url = '/scripting'
+  pageRef = 'scripting'
+  weight = 12

@@ -1,0 +1,7 @@
+{{- $text := .Get "text" -}}
+{{- $url := .Get "url" -}}
+
+<li class="menu__item">
+  <a href="{{- $url -}}" class="menu__text">{{- $text -}}</a>
+  <span class="menu__icon"><span class="icon icon--arrow-down"></span></span>
+</li>
