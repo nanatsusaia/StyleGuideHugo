@@ -7,6 +7,5 @@ dist/
 # hugo
 resources/
 build/
-src/assets/hugo/static/style-guide/
 .hugo_build.lock
 .hugo_build.lock
